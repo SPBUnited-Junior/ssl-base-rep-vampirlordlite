@@ -98,3 +98,4 @@ class Strategy:
         else:
             waypoints[self.gk_al] = wp.Waypoint(field.ally_goal.center, vec.arg(), wp.WType.S_ENDPOINT)
         # waypoints[self.gk_al] = wp.Waypoint(field.ally_goal.center, 0, wp.WType.S_ENDPOINT)
+        print('a')
