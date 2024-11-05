@@ -36,7 +36,6 @@ class SSLController(BaseProcessor):
     commands_sink_writer: DataWriter = attr.ib(init=False)
 
     dbg_game_status: strategy.GameStates = strategy.GameStates.TIMEOUT
-    dbg_state: strategy.States = strategy.States.DEBUG
 
     cur_time = time.time()
     delta_t = 0.0
@@ -106,7 +105,10 @@ class SSLController(BaseProcessor):
         Рассчитать стратегию, тактику и физику для роботов на поле
         """
         self.router.update(self.field)
+        print(1)
         waypoints = self.strategy.process(self.field)
+        print(waypoints[10])
+        print(3)
 
         for i in range(const.TEAM_ROBOTS_MAX_COUNT):
             self.router.get_route(i).clear()
@@ -184,12 +186,13 @@ class SSLController(BaseProcessor):
         Выполнить цикл процессора
         """
 
+
         self.delta_t = time.time() - self.cur_time
         self.cur_time = time.time()
 
         self.read_vision()
-        self.process_referee_cmd()
+        # self.process_referee_cmd()
         self.control_loop()
 
         self.control_assign()
-        self.draw_image()
+        # self.draw_image()

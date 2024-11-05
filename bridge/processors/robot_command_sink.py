@@ -161,7 +161,7 @@ class CommandSink(BaseProcessor):
                 rules.append(control_team[i].auto_kick_)
                 rules.append(control_team[i].kicker_voltage_)
                 rules.append(control_team[i].dribbler_enable_)
-                rules.append(control_team[i].dribbler_speed_)
+                rules.append(min(control_team[i].dribbler_speed_, 5))
                 rules.append(control_team[i].kicker_charge_enable_)
                 rules.append(control_team[i].beep)
                 rules.append(0)
