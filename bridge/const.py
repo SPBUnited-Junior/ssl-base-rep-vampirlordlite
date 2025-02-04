@@ -15,7 +15,7 @@ class Color(Enum):
 
 ##################################################
 # GAME SETTING CONSTS
-DIV = "B"
+DIV = "C"
 COLOR = Color.BLUE
 POLARITY = 1  # -1 если ворота синих на +x; 1 если ворота синих на -x
 
@@ -23,7 +23,7 @@ IS_SIMULATOR_USED = False
 IS_DRIBBLER_USED = True  # dribbler and upper_kick
 SELF_PLAY = False
 
-GK = 9
+GK = 2
 PENALTY_KICKER = 0
 ENEMY_GK = 1
 
@@ -120,10 +120,10 @@ if DIV == "C":
 
     GK_FORW = 100 + ROBOT_R
 
-KICK_ALIGN_DIST = 150
-GRAB_ALIGN_DIST = 130
+KICK_ALIGN_DIST = 200
+GRAB_ALIGN_DIST = 200
 KICK_ALIGN_DIST_MULT = 1.5
-KICK_ALIGN_ANGLE = 0.07
+KICK_ALIGN_ANGLE = 0.1
 KICK_ALIGN_OFFSET = 20
 BALL_GRABBED_DIST = 115
 BALL_GRABBED_ANGLE = 0.8

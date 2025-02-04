@@ -105,10 +105,8 @@ class SSLController(BaseProcessor):
         Рассчитать стратегию, тактику и физику для роботов на поле
         """
         self.router.update(self.field)
-        print(1)
         waypoints = self.strategy.process(self.field)
-        print(waypoints[10])
-        print(3)
+        print(waypoints[0])
 
         for i in range(const.TEAM_ROBOTS_MAX_COUNT):
             self.router.get_route(i).clear()
